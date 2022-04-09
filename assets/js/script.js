@@ -109,12 +109,8 @@ function getLocationWeather(lat, lon) {
 
 
                 for (var i = 0; i < dailyDivs.length; i++) {
-
-                    const milliseconds = data.daily[i].dt * 1000 
-                    
-                    const dateObject = new Date(milliseconds)
-                    
-                    const humanDateFormat = dateObject.toLocaleString() 
+                    // converting Unix to date
+                    var humanDateFormat = new Date(data.daily[i].dt * 1000).toLocaleDateString("en-US");
 
                         // get child elements of current div being looped over
                     dailyDivs[i].find(".dateText").text(humanDateFormat);
