@@ -8,7 +8,6 @@ var currentWindEl = $("#todaywind");
 var currentHumidityEl = $("#todayhumi");
 var currentUvEl = $("#uvindex");
 var currentDate = moment().format("M/D/YYYY");
-var nextDate = moment().add(i + 1, 'days').format("M/D/YYYY");
 var cityName = "";
 
 var dailyDivs = [$('#day-1-div'), $('#day-2-div'), $('#day-3-div'), $('#day-4-div'), $('#day-5-div')]
@@ -31,7 +30,7 @@ var keyCount = 0;
 // Search button click event
 searchButton.click(function() {
 
-    searchInput = $(".searchcity").val();
+    searchInput = $(".searchcity").val().trim();
 
     var previouslySavedCities = JSON.parse(localStorage.getItem("savedCities")) || []
     previouslySavedCities.push(searchInput)
@@ -92,8 +91,6 @@ function getLocationWeather(lat, lon) {
                 // Weather Icon
                 var currentWeatherIconEl = $("#current-icon");
                 currentWeatherIconEl.attr("src", "https://openweathermap.org/img/wn/" + data.current.weather[0].icon + "@2x.png")
-
-
                 // Current Temp
                 var currentTempEl = $("#todaytemp");
                 currentTempEl.text(data.current.temp + "F");
@@ -112,7 +109,7 @@ function getLocationWeather(lat, lon) {
                     // converting Unix to date
                     var humanDateFormat = new Date(data.daily[i + 1].dt * 1000).toLocaleDateString("en-US");
 
-                        // get child elements of current div being looped over
+                    // get child elements of current div being looped over
                     dailyDivs[i].find(".dateText").text(humanDateFormat);
                     dailyDivs[i].find(".weathericon").attr("src", "https://openweathermap.org/img/wn/" + data.daily[i + 1].weather[0].icon + ".png");
                     dailyDivs[i].find(".tempText").text(data.daily[i + 1].temp.day);
