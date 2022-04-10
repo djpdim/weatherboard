@@ -30,6 +30,7 @@ searchButton.click(function() {
 
     searchInput = $(".searchcity").val().trim();
 
+    // Storing New Cities into local storage with the old Cities
     var previouslySavedCities = JSON.parse(localStorage.getItem("savedCities")) || []
     previouslySavedCities.push(searchInput)
     localStorage.setItem("savedCities", JSON.stringify(previouslySavedCities))
