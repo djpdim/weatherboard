@@ -110,7 +110,7 @@ function getLocationWeather(lat, lon) {
 
                 for (var i = 0; i < dailyDivs.length; i++) {
                     // converting Unix to date
-                    var humanDateFormat = new Date(data.daily[i].dt * 1000).toLocaleDateString("en-US");
+                    var humanDateFormat = new Date(data.daily[i + 1].dt * 1000).toLocaleDateString("en-US");
 
                         // get child elements of current div being looped over
                     dailyDivs[i].find(".dateText").text(humanDateFormat);
