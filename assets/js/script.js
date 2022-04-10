@@ -9,18 +9,16 @@ var currentHumidityEl = $("#todayhumi");
 var currentUvEl = $("#uvindex");
 var currentDate = moment().format("M/D/YYYY");
 var cityName = "";
-
-var dailyDivs = [$('#day-1-div'), $('#day-2-div'), $('#day-3-div'), $('#day-4-div'), $('#day-5-div')]
-
-var savedCities = JSON.parse(localStorage.getItem('savedCities')) || []
+var dailyDivs = [$('#day-1-div'), $('#day-2-div'), $('#day-3-div'), $('#day-4-div'), $('#day-5-div')];
+var savedCities = JSON.parse(localStorage.getItem('savedCities')) || [];
 
 // Forloop for persisting the data onto HMTL page
 for (var i = 0; i < savedCities.length; i++) {
 
     var city = savedCities[i];
-    var cityNameEl = $("<li>")
-    cityNameEl.addClass("list-group-item btn btn-primary col-12 btn-style btn-recent")
-    cityNameEl.text(city)
+    var cityNameEl = $("<li>");
+    cityNameEl.addClass("list-group-item btn btn-primary col-12 btn-style btn-recent");
+    cityNameEl.text(city);
 
     $(".list-group").append(cityNameEl);
 }
@@ -56,8 +54,6 @@ function getUserLocation(searchInput) {
                 // Gets the lon and lat of the location
                 var locationLat = data[0].lat;
                 var locationLon = data[0].lon;
-                console.log(data);
-                console.log(data[0].name);
                 cityName = data[0].name;
                 // Convert from Int to Str
                 var latString = locationLat.toString();
@@ -83,8 +79,6 @@ function getLocationWeather(lat, lon) {
     fetch(apiUrl).then(function(response) {
         if (response.ok) {
             response.json().then(function(data) {
-                
-                console.log(data);
                 // City Name and date
                 var currentCityNameEl = $(".subtitle");
                 currentCityNameEl.text(cityName.toUpperCase() + " (" + currentDate + ")");
