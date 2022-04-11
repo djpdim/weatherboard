@@ -15,8 +15,8 @@
 
 ### This project has the following features: 
 * A Search bar for the city location.
-* A card that provides the current weather.
-    ** Location, Temp, Humidity, Wind Speed, UV Index.
+* A card that provides the current weather
+** Location, Temp, Humidity, Wind Speed, UV Index.
 * A Card that provides a five day forecast.
    
 
@@ -35,11 +35,13 @@
 * Use of Bootstrap, jquery, google fonts, and moment.
 
 ### This project features responsive design using a Bootstrap layout
+
+
 ### Has responsive layout for: 
-** Small devices (landscape phones, 576px and up).
-** Medium devices (tablets, 768px and up).
-** Large devices (desktops, 992px and up).
-** Extra large devices (large desktops, 1200px and up).
+* Small devices (landscape phones, 576px and up).
+* Medium devices (tablets, 768px and up).
+* Large devices (desktops, 992px and up).
+* Extra large devices (large desktops, 1200px and up).
 
 
 ## Acknowledgments
