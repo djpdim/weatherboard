@@ -22,13 +22,13 @@
 
 ### Psuedo code:  
 * Create a search input for customer input.
-* 3 API calls for Current Weather, 5-day Forecast and UV Index.
+* 2 API calls for Current Weather and 5-day Forecast.
 * 3 Separate cards with search history, current weather and 5-day weather.
 * Local storage will save user history.
 
 
 ### This project has script features of:
-* 3 API calls.
+* 2 API calls.
 * Variable declaration area and daily divs.
 * An event listener (onclick) that recieves user input.
 * A For loop through the 5-day forecast.
