@@ -4,7 +4,7 @@
     --tertiary: rgb(108, 191, 255);
     --light-dark: rgb(3, 109, 190);
     --dark: #23254a;
-    --border-radius: .3rem;
+    --border-radius: 0.3rem;
 }
 
 * {
@@ -27,7 +27,7 @@ body {
     color: black;
 }
 
-.dateText{
+.dateText {
     color: white;
 }
 
@@ -92,7 +92,6 @@ p {
     font-size: 1.2rem;
 }
 
-
 /* .searchButton-back:hover {
     color: var(--primary);
     background-color: var(--tertiary);
@@ -127,8 +126,8 @@ p {
     border-radius: 10px;
 }
 
-.list-group-item{
-    margin-bottom:0;
+.list-group-item {
+    margin-bottom: 0;
 }
 
 .list-item {
@@ -160,7 +159,6 @@ p {
     color: rgb(29, 153, 255);
 }
 
-
 /* CARDS */
 
 .card {
@@ -176,7 +174,7 @@ p {
     color: var(--primary);
     background-color: var(--dark);
     padding: 2.5%;
-    border-radius: calc(.18rem - 1px) calc(.18rem - 1px) 0 0;
+    border-radius: calc(0.18rem - 1px) calc(0.18rem - 1px) 0 0;
 }
 
 .card-body {
@@ -193,7 +191,6 @@ p {
     padding: 20px;
     margin-bottom: 15px;
 }
-
 
 /* FORM */
 
@@ -217,7 +214,6 @@ p {
     border-radius: var(--border-radius);
 }
 
-
 /* HEIGHT / WIDTH UTILS */
 
 .min-100-vh {
@@ -228,13 +224,11 @@ p {
     min-width: 100vw;
 }
 
-
 /* FONT UTILS */
 
 .text-uppercase {
     text-transform: uppercase;
 }
-
 
 /* FLEX CONTENT */
 
@@ -258,7 +252,7 @@ p {
 }
 
 .justify-flex-start {
-    justify-content: flex-start
+    justify-content: flex-start;
 }
 
 .justify-flex-end {

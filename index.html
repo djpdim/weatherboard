@@ -1,25 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.css">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Staatliches&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Staatliches&display=swap"
+      rel="stylesheet">
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Weatherboard</title>
   </head>
+
   <body class="flex-column min-100-vh">
-    <header class="header h1 col-12 d-flex flex-column text-center p-3 mb-2 bg-primary text-white "> Weather Dashboard </header>
+    <header class="header h1 col-12 d-flex flex-column text-center p-3 mb-2 bg-primary text-white "> Weather Dashboard
+    </header>
     <main>
-        <!-- Search section -->
+      <!-- Search section -->
       <div class="flex-row d-flex justify-content-around col-12">
         <div class="col-12 col-md-4">
           <div class="card">
             <div class="h2">Search for a City:</div>
-            <input type="text" placeholder="Enter a City" id="searchcity" name="searchcity" class="form-input d-flex flex-column searchcity" />
+            <input type="text" placeholder="Enter a City" id="searchcity" name="searchcity"
+              class="form-input d-flex flex-column searchcity" />
             <button type="submit" class="searchButton">Search</button>
             <ul id="citiesList" class="list-group"></ul>
           </div>
@@ -137,4 +143,5 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="./assets/js/script.js"></script>
   </body>
+
 </html>
