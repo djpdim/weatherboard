@@ -40,6 +40,20 @@ function getSavedCityWeather() {
     getUserLocation($(this).text())
 }
 
+function reloadPage() {
+    var locationArray = []
+    if (localStorage.getItem("searchHistory")) {
+        locationArray = [...JSON.parse(localStorage.getItem("searchHistory"))]
+        for (var i = 0; i < locationArray.length; i++) {
+            var recentItem = document.createElement("button")
+            recentItem.textContent = locationArray[i]
+            recentItem.setAttribute("id", locationArray[i])
+            recentItem.className = "btn btn-primary col-12 btn-style btn-recent"
+            previousSearch.appendChild(recentItem)
+        }
+    }
+}
+
 // get coordinates for user location
 function getUserLocation(searchInput) {
     // Get location lon and lat
