@@ -11,6 +11,7 @@ var currentDate = moment().format("M/D/YYYY")
 var cityName = ""
 var dailyDivs = [$("#day-1-div"), $("#day-2-div"), $("#day-3-div"), $("#day-4-div"), $("#day-5-div")]
 var savedCities = JSON.parse(localStorage.getItem("savedCities")) || []
+var previousSearch = document.querySelector("#previous-search")
 
 // Forloop for persisting the data onto HMTL page
 for (var i = 0; i < savedCities.length; i++) {
@@ -45,7 +46,7 @@ function reloadPage() {
     if (localStorage.getItem("searchHistory")) {
         locationArray = [...JSON.parse(localStorage.getItem("searchHistory"))]
         for (var i = 0; i < locationArray.length; i++) {
-            var recentItem = document.createElement("button")
+            var recentItem = document.createElement("searchButton")
             recentItem.textContent = locationArray[i]
             recentItem.setAttribute("id", locationArray[i])
             recentItem.className = "btn btn-primary col-12 btn-style btn-recent"
@@ -136,5 +137,7 @@ function getLocationWeather(lat, lon) {
         }
     })
 }
+
+reloadPage()
 
 $("#citiesList").on("click", ".list-group-item", getSavedCityWeather)
