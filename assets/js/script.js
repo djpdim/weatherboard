@@ -43,14 +43,16 @@ function getSavedCityWeather() {
 
 function reloadPage() {
     var locationArray = []
-    if (localStorage.getItem("searchHistory")) {
-        locationArray = [...JSON.parse(localStorage.getItem("searchHistory"))]
+    if (localStorage.getItem("savedCities")) {
+        locationArray = JSON.parse(localStorage.getItem("savedCities"))
+        $(".list-group").empty()
         for (var i = 0; i < locationArray.length; i++) {
-            var recentItem = document.createElement("searchButton")
-            recentItem.textContent = locationArray[i]
-            recentItem.setAttribute("id", locationArray[i])
-            recentItem.className = "btn btn-primary col-12 btn-style btn-recent"
-            previousSearch.appendChild(recentItem)
+            var city = locationArray[i]
+            var cityNameEl = $("<li>")
+            cityNameEl.addClass("list-group-item btn btn-primary col-12 btn-style btn-recent")
+            cityNameEl.text(city)
+
+            $(".list-group").append(cityNameEl)
         }
     }
 }
@@ -76,6 +78,7 @@ function getUserLocation(searchInput) {
 
                     // Call function to get values
                     getLocationWeather(latString, lonString)
+                    reloadPage()
                 })
             } else {
                 alert("Location not found!")
@@ -137,7 +140,5 @@ function getLocationWeather(lat, lon) {
         }
     })
 }
-
-reloadPage()
 
 $("#citiesList").on("click", ".list-group-item", getSavedCityWeather)
